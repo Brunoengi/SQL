@@ -1,0 +1,24 @@
+Criado o BD:
+create schema cfbcursos
+
+criado a tabela:
+create table cliente(
+	i_cliente_cliente int primary key not null auto_increment,
+   	s_nome_cliente varchar(50) not null,
+    	s_cpf_cliente varchar(11) not null,
+    	d_nascimento_cliente datetime
+);
+
+Adicionamos uma coluna na tabela:
+alter table tipocliente add i_tipo_cliente int default 1
+
+Alterar coluna da tabela:
+alter table tipocliente modify column i_tipo_cliente varchar(30)
+
+criado a segunda tabela:
+create table tipocliente(
+i_tipocliente_tipocliente int primary key auto_increment,
+s_dsctipocliente_tipocliente varchar(100) not null
+);
+
+alter table cliente add constraint fk_tipocliente foreign key (i_tipo_cliente) references tipocliente (i_tipocliente_tipocliente)

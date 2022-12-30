@@ -1,0 +1,36 @@
+Tipos de dados:
+
+-- De texto:
+Tinytext: 255 bytes
+Text: 65.535 bytes
+Mediumtext: 16.777.215 bytes
+Longtext: 4.294.967.295 bytes
+
+char: 255 bytes (Tamanho Fixo)
+varchar: 65.535 (Tamanho Variável)
+
+
+
+-- Numéricos: (Ppde-se trabalhar sem sinal ou com sinal)
+Tinyint
+Smallint
+Mediumint
+Int / Integer
+Bigint
+
+- Com casas decimais:
+Float(p,e)
+Double(p,e)
+Decimal(p,e)
+
+p = precisão (numero de digitos)
+e = escala (casas decimais)
+
+
+
+--- Temporais:
+Date (Ano, mês, dia)
+Datetime (Ano, mês, dia, hora)
+Timestamp (Ano, mês, dia, hora)
+Year (Ano)
+Time (Hora)

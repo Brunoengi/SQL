@@ -1,0 +1,5 @@
+Adicinar coluna:
+alter table cliente add i_idade_cliente int;
+
+Alterando o dado de int para tinyint:
+alter table cliente modify column i_idade_cliente tinyint;

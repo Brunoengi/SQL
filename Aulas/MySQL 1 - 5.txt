@@ -1,0 +1,46 @@
+Criar banco de dados:
+create schema {schema name}
+create schema {schema name} default character set utf8
+
+Escolher banco de dados:
+use {schema name}
+
+Deletar banco de dados:
+drop schema {schema name}
+
+Deletar tabela:
+drop table {table name}
+
+Deletar coluna:
+alter table {table name} drop column {column name}
+
+Alterar coluna da tabela:
+alter table {table name} modify column {name column} varchar(30)
+
+Adicionar coluna na tabela:
+alter table {table name} add i_tipo_cliente int default 1
+
+Tipo de dados:
+int - inteiro
+char - caracter com tamanho do campo fixo
+varchar - caracter com tamanho do campo dinâmico
+
+Criando Tabela:
+
+create table cliente(
+	i_cliente_cliente int primary key not null auto_increment,
+   	s_nome_cliente varchar(50) not null,
+    	s_cpf_cliente varchar(11) not null,
+    	d_nascimento_cliente datetime
+);
+
+Lógica do nome da coluna:
+Primeira letra: tipo de dado
+primeira palavra: nome da coluna
+segunda palavra: nome da tabela
+
+SQL Primary Key (Chave Primária) - Identificador para um registro na tabela, precisando que seja diferente para cada uma das linhas da tabela
+SQL Foreign Key (Chave estrangeira) - Campo que serve para ligação com outras tabelas
+alter table {tabela origem} add constraint {nome restricao} foreing key ({campo tabela origem}) references {tabela destino} ({campo tabela destino}) 
+
+
