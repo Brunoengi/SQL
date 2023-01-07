@@ -3,3 +3,8 @@ alter table cliente add i_idade_cliente int;
 
 Alterando o dado de int para tinyint:
 alter table cliente modify column i_idade_cliente tinyint;
+
+Adicionando dado na schema cfbcursos:
+insert into cliente values (01,'Bruno','00000000000','1978-03-07',01)
+
+Nesse caso não irá funcionar pois existe uma restrição de chave estrangeira, é necessário inserir o tipo 01 (quinto campo)

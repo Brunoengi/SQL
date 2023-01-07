@@ -34,3 +34,7 @@ Datetime (Ano, mês, dia, hora)
 Timestamp (Ano, mês, dia, hora)
 Year (Ano)
 Time (Hora)
+
+Aula 7 - Comandos da DML - Data Manipulate Language(comandos para manipular os dados dentro das tabelas)
+
+Estrutura básica do insert: insert into {tabela} {colunas 'opcional'} values {valores}
