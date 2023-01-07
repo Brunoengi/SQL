@@ -8,3 +8,44 @@ Adicionando dado na schema cfbcursos:
 insert into cliente values (01,'Bruno','00000000000','1978-03-07',01)
 
 Nesse caso não irá funcionar pois existe uma restrição de chave estrangeira, é necessário inserir o tipo 01 (quinto campo)
+
+insert into tipocliente values (01,'Pessoa Física');
+insert into tipocliente values (02,'Pessoa Jurídica');
+insert into tipocliente values (03,'Cliente Especial');
+
+insert into cliente values (02,'Lucas','11111111111','1998-02-02',01);
+insert into cliente values (03,'Otávio','22222222222','1998-02-02',01);
+insert into cliente values (04,'Alexandre','33333333333','1998-02-02',01);
+insert into cliente values (05,'Fabiane','44444444444','1998-02-02',01);
+insert into cliente values (06,'Artelis','44444444444','1998-02-02',02);
+insert into cliente values (07,'Betilson','44444444444','1998-02-02',02);
+insert into cliente values (08,'Goku','44444444444','1998-02-02',03);
+
+select * from tipocliente
+select * from cliente
+
+CREATE TABLE `cliente_aux` (
+  `i_cliente_cliente` int NOT NULL AUTO_INCREMENT,
+  `s_nome_cliente` varchar(30) NOT NULL,
+  `s_cpf_cliente` varchar(11) NOT NULL,
+  `d_nascimento_cliente` datetime DEFAULT NULL,
+  `i_tipo_cliente` int NOT NULL,
+  PRIMARY KEY (`i_cliente_cliente`),
+  KEY `fk_tipocliente` (`i_tipo_cliente`),
+  CONSTRAINT `fk_tipocliente_2` FOREIGN KEY (`i_tipo_cliente`) REFERENCES `tipocliente` (`i_tipocliente_tipocliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3
+
+
+insert into cliente_aux
+(i_cliente_cliente,s_nome_cliente,s_cpf_cliente,d_nascimento_cliente,i_tipo_cliente)
+select 
+i_cliente_cliente,
+s_nome_cliente,
+s_cpf_cliente,
+d_nascimento_cliente,
+i_tipo_cliente
+from cliente
+
+Maneira simplificada:
+insert into cliente_aux select * from cliente
+

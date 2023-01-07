@@ -1,0 +1,23 @@
+select *, s_nome_cliente, s_cpf_cliente from cliente;
+
+select
+    s_nome_cliente,
+    i_tipo_cliente * 2
+from
+    cliente;
+
+Aula 13
+
+select 
+    i_cliente_cliente as idCliente,
+    upper(s_nome_cliente) as nomeCliente,
+    i_tipo_cliente as tipocliente
+from
+    cliente;
+
+select 
+    i_cliente_cliente as idCliente,
+    upper(s_nome_cliente) as nomeCliente,
+    i_tipo_cliente as tipocliente
+from
+    cliente tbc;

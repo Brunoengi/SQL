@@ -35,6 +35,20 @@ Timestamp (Ano, mês, dia, hora)
 Year (Ano)
 Time (Hora)
 
-Aula 7 - Comandos da DML - Data Manipulate Language(comandos para manipular os dados dentro das tabelas)
+Aula 8 - Comandos da DML - Data Manipulate Language(comandos para manipular os dados dentro das tabelas)
 
 Estrutura básica do insert: insert into {tabela} {colunas 'opcional'} values {valores}
+
+Comandos DQL - Consulta
+Principal comando: select
+
+Aula 9 - Inserções múltiplas
+Nesse momento nós vamos criar uma nova tabela pegar os registros de cliente e inserir em uma outra tabela
+
+Aula 10 - Comando update (Modificar um registro da tabela)
+update {tabela} set {coluna}='novoValor' where {condicao}
+
+Pode-se alterar mais de um campo
+update {tabela} set {coluna}='novoValor', {coluna2}='novoValor2' where {condicao}
+
+

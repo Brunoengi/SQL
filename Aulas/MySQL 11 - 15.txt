@@ -1,0 +1,27 @@
+Aula 11 - Comando delete:
+delete from {tabela} where {condicao}
+
+Existem outras clausulas no select alem do from e where como:
+- group by
+- having
+- order by
+
+É possível fazer operações nas consultas, por exemplo multiplicar por 2:
+
+select
+    s_nome_cliente,
+    i_tipo_cliente * 2
+from
+    cliente;
+
+
+Existem funções que podem ser chamadas no select, por exemplo para colocar uma string em maíusculo:
+
+select 
+    i_cliente_cliente,
+    upper(s_nome_cliente)
+from
+    cliente;
+
+Aula 13: Aprendendo a criar labels para colunas (ALIAS), isso é importante pois ao fazer consultas que utilizam funções ou operações se quer que o nome da coluna não fique com o nome da função função mas tenha um nome característico
+Pode-se criar ALIAS tanto para colunas quanto para tabelas
