@@ -25,3 +25,19 @@ from
 
 Aula 13: Aprendendo a criar labels para colunas (ALIAS), isso é importante pois ao fazer consultas que utilizam funções ou operações se quer que o nome da coluna não fique com o nome da função função mas tenha um nome característico
 Pode-se criar ALIAS tanto para colunas quanto para tabelas
+
+Aula 14: Distinct - Utilizado para remover consultas duplicadas
+
+Primeiramente, vamos criar outra tabela chamada venda:
+CREATE TABLE `cfbcursos`.`venda` (
+  `i_venda_venda` INT NOT NULL AUTO_INCREMENT,
+  `i_cliente_cliente` INT NOT NULL,
+  `d_data_venda` DATE NULL,
+  `f_valor_venda` FLOAT NULL,
+  PRIMARY KEY (`i_venda_venda`),
+  INDEX `fk_i_cliente_cliente_idx` (`i_cliente_cliente` ASC) VISIBLE,
+  CONSTRAINT `fk_i_cliente_cliente`
+    FOREIGN KEY (`i_cliente_cliente`)
+    REFERENCES `cfbcursos`.`cliente` (`i_cliente_cliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
