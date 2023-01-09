@@ -1,0 +1,84 @@
+------------------------------------------------------------
+select * from (select i_cliente_cliente, s_nome_cliente from cliente) c
+-------------------------------------------------------------
+select c.s_nome_cliente from (select i_cliente_cliente, s_nome_cliente from cliente) c
+-------------------------------------------------------------
+Aula 17
+create view cpfcliente as
+	select i_cliente_cliente,s_cpf_cliente from cliente;
+-------------------------------------------------------------
+select i_cliente_cliente,
+		s_nome_cliente,
+        day(d_nascimento_cliente) as 'Dia Aniversário'
+from cliente
+-------------------------------------------------------------
+select i_cliente_cliente,
+		s_nome_cliente,
+        day(d_nascimento_cliente) as 'Dia Aniversário'
+from cliente
+where
+    month(d_nascimento_cliente) = month(curdate())
+-------------------------------------------------------------
+create view niverMesAtual as
+select 
+    i_cliente_cliente,
+	s_nome_cliente,
+    day(d_nascimento_cliente) as 'Dia Aniversário'
+from 
+    cliente
+where
+    month(d_nascimento_cliente) = month(curdate())
+-------------------------------------------------------------
+Aula 18
+select * from cliente
+where
+    s_cpf_cliente = '00000000000' or
+    s_cpf_cliente = '11111111111'
+-------------------------------------------------------------
+Aula 18
+select * from cliente
+where
+    i_tipo_cliente = 1 And
+    mounth(d_nasc_cliente) > 5
+-------------------------------------------------------------
+select * from cliente
+where
+    i_tipo_cliente in(2,3) And
+    i_tipo_cliente != 1 And
+    mounth(d_nasc_cliente) > 5
+-------------------------------------------------------------
+select * from cliente
+where
+    i_tipo_cliente in(2,3) And
+    (mounth(d_nasc_cliente) > 5 And mounth(d_nasc_cliente) <= 5) 
+-------------------------------------------------------------
+Aula 19
+select
+    c.i_cliente_cliente,
+    c.s_nome_cliente,
+    c.s_cpf_cliente,
+    c.d_nascimento_cliente,
+    tc.s_dsctipocliente_tipocliente
+from cliente campo
+    inner join tipocliente tc on c.i.tipo_cliente = tc.i_tipocliente_tipocliente
+-------------------------------------------------------------
+select 
+	v.i_venda_venda,
+    c.s_nome_cliente,
+    c.s_cpf_cliente,
+    v.d_data_venda,
+    v.f_valor_venda
+from venda v
+	inner join cliente c on v.i_cliente_cliente = c.i_cliente_cliente
+-------------------------------------------------------------
+select 
+	v.i_venda_venda,
+    c.s_nome_cliente,
+    c.s_cpf_cliente,
+    v.d_data_venda,
+    v.f_valor_venda,
+    tc.s_dsctipocliente_tipocliente
+from venda v
+	inner join cliente c on v.i_cliente_cliente = c.i_cliente_cliente
+    inner join tipocliente tc on c.i_tipo_cliente = tc.i_tipocliente_tipocliente
+-------------------------------------------------------------

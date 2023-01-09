@@ -1,0 +1,11 @@
+Aula 16: Clausula FROM - Termos para estudar: tabela permanente, temporária, virtual
+Pode-se usar no from uma tabela retornada por um select, essa tabela é denominada temporária:
+Pode-se inserir uma view na clausula from
+
+Views: Também chamada de tabela virtual, a view retorna uma tabela como resultado de uma consulta programada servindo para facilitar as consultas
+
+Aula 17 - Como utilizar views, criando views que verificam os aniversariantes do mês atual
+
+Aula 18 - Where - Determina as condições
+
+Aula 19 - Inner Join Faz a junção entre tabelas

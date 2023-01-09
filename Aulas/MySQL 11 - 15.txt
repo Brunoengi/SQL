@@ -41,3 +41,6 @@ CREATE TABLE `cfbcursos`.`venda` (
     REFERENCES `cfbcursos`.`cliente` (`i_cliente_cliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+Aula 15: Subselect (Uma das funcionalidades é automatizar o campo autoincremento, nesse caso ao inves de inserir o id vamos fazer uma consulta para verificar o maior id, acrescentar em 1 e usar isso como parâmetro para a query insert)
+

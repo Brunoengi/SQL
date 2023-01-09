@@ -1,11 +1,11 @@
 select *, s_nome_cliente, s_cpf_cliente from cliente;
-----------------------------------------------
+-------------------------------------------------------------
 select
     s_nome_cliente,
     i_tipo_cliente * 2
 from
     cliente;
----------------------------------------------
+-------------------------------------------------------------
 Aula 13
 
 select 
@@ -14,21 +14,21 @@ select
     i_tipo_cliente as tipocliente
 from
     cliente;
----------------------------------------------
+-------------------------------------------------------------
 select 
     i_cliente_cliente as idCliente,
     upper(s_nome_cliente) as nomeCliente,
     i_tipo_cliente as tipocliente
 from
     cliente tbc;
---------------------------------------------
+-------------------------------------------------------------
 select 
     tbc.i_cliente_cliente as idCliente,
     upper(tbc.s_nome_cliente) as nomeCliente,
     tbc.i_tipo_cliente as tipocliente
 from
     cliente tbc;
---------------------------------------------------
+-------------------------------------------------------------
 Aula 14
 
 CREATE TABLE `cfbcursos`.`venda` (
@@ -43,7 +43,7 @@ CREATE TABLE `cfbcursos`.`venda` (
     REFERENCES `cfbcursos`.`cliente` (`i_cliente_cliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
---------------------------------------------------
+-------------------------------------------------------------
 insert into venda values(1,1,'2020-12-12',123.50);
 insert into venda values(2,2,'2020-12-01',535.2);
 insert into venda values(3,3,'2020-11-10',50.49);
@@ -64,9 +64,16 @@ insert into venda values(17,4,'2020-09-07',12.99);
 insert into venda values(18,3,'2020-12-24',59.90);
 insert into venda values(19,8,'2020-06-25',235.50);
 insert into venda values(20,2,'2020-06-26',7.99);
-------------------------------------------------------
+-------------------------------------------------------------
 select 
     distinct i_cliente_cliente
 from
     venda;
-------------------------------------------------------
+-------------------------------------------------------------
+Aula 15:
+insert into cliente values(
+    (select max(c.i_cliente_cliente)+1 as i_cliente_cliente from cliente c),
+    'Vespertino'
+    '12345678911',
+    '1999-03-03'
+)
